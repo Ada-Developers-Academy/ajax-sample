@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ajax</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>Welcome to The Store™</h1>
+  
+  <ul class='products'>
+  </ul>
+  
+  <%= form_for Product.new, html: {id: "product-form"} do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :cents %>
+    <%= f.text_field :cents %>
+    <br>
+    <%= f.submit "Add Product" %>
+  <% end %>
+
+</body>
+</html>
